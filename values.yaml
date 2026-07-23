@@ -1,0 +1,12 @@
+replicaCount: 3
+
+image:
+  repository: nareshyovi/node-app
+  tag: v2
+  containerPort: 80
+
+service:
+  type: NodePort
+  port: 3000
+  targetPort: 3000
+  nodePort: 30080
