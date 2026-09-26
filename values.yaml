@@ -2,7 +2,7 @@ replicaCount: 2
 
 image:
   repository: nareshyovi/node-app
-  tag: v2
+  tag: "V8"
   containerPort: 80
 
 service:
