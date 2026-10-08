@@ -10,14 +10,4 @@ service:
   targetPort: 3000
   nodePort: 30080
 
-ingress:
-  enabled: true
-  className: nginx
 
-  host: n8nnaresh.duckdns.org
-
-  tls:
-    enabled: true
-    secretName: node-app-tls
-
-  clusterIssuer: letsencrypt-prod
