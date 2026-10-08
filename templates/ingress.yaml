@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: node-app
+  namespace: node-app
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+spec:
+  ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - app.example.com
+      secretName: node-app-tls
+
+  rules:
+    - host: n8nnaresh.duckdns.org
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: node-app
+                port:
+                  number: 80
