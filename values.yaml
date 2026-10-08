@@ -6,7 +6,18 @@ image:
   containerPort: 80
 
 service:
-  type: NodePort
   port: 3000
   targetPort: 3000
   nodePort: 30080
+
+ingress:
+  enabled: true
+  className: nginx
+
+  host: nodeapp.example.com
+
+  tls:
+    enabled: true
+    secretName: node-app-tls
+
+  clusterIssuer: letsencrypt-prod
