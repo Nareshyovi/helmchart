@@ -10,7 +10,7 @@ spec:
 
   tls:
     - hosts:
-        - app.example.com
+        - n8nnaresh.duckdns.org
       secretName: node-app-tls
 
   rules:
